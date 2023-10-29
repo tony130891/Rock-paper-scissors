@@ -1,4 +1,7 @@
 * {
-  margin: 0;
-  padding: 0;
+  margin: 30px;
+}
+
+button {
+  font-size: large;
 }
