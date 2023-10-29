@@ -3,10 +3,6 @@ const paperBtn = document.querySelector(".paperBtn");
 const scissorsBtn = document.querySelector(".scissorsBtn");
 const randomString = ["Rock", "Paper", "Scissors"];
 
-const getComputerChoice = () => {
-  return randomString[Math.floor(Math.random() * randomString.length)];
-};
-
 rockBtn.addEventListener("click", (e) => {
   console.log("Rock");
 });
@@ -18,3 +14,20 @@ paperBtn.addEventListener("click", (e) => {
 scissorsBtn.addEventListener("click", (e) => {
   console.log("Scissors");
 });
+
+const getComputerChoice = () => {
+  return randomString[Math.floor(Math.random() * randomString.length)];
+};
+
+function playRound(playerSelection, computerSelection) {
+  if (computerSelection === "Rock") {
+    return "you tied";
+  } else if (computerSelection === "Paper") {
+    return "The computer won";
+  } else {
+    return "You won";
+  }
+}
+
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
