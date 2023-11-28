@@ -44,9 +44,7 @@ paper.addEventListener("click", () => {
   if (playerScore > 0) {
     playerScore1.textContent = playerScore;
   }
-  if (compScore == 5) {
-    return winner();
-  } else if (playerScore == 5) {
+  if (compScore == 5 || playerScore == 5) {
     rock.disabled = true;
     paper.disabled = true;
     scissors.disabled = true;
@@ -64,9 +62,7 @@ scissors.addEventListener("click", () => {
   if (playerScore > 0) {
     playerScore1.textContent = playerScore;
   }
-  if (compScore == 5) {
-    return winner();
-  } else if (playerScore == 5) {
+  if (compScore == 5 || playerScore == 5) {
     rock.disabled = true;
     paper.disabled = true;
     scissors.disabled = true;
