@@ -75,12 +75,8 @@ scissors.addEventListener("click", () => {
 });
 
 reset.addEventListener("click", () => {
-  message.textContent = "";
-  playerScore1.textContent = 0;
-  compScore1.textContent = 0;
-  rock.disabled = false;
-  paper.disabled = false;
-  scissors.disabled = false;
+  window.location.reload();
+  return false;
 });
 
 function getComputerChoice() {
