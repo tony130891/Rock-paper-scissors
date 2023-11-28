@@ -1,5 +1,6 @@
 const container = document.querySelector(".container");
 const players = document.querySelector(".players");
+const reset = document.querySelector(".reset");
 
 // replace the console.log of the rounds with dom
 const message = document.createElement("h2");
@@ -25,9 +26,10 @@ rock.addEventListener("click", () => {
   if (playerScore > 0) {
     playerScore1.textContent = playerScore;
   }
-  if (compScore == 5) {
-    return winner();
-  } else if (playerScore == 5) {
+  if (compScore == 5 || playerScore == 5) {
+    rock.disabled = true;
+    paper.disabled = true;
+    scissors.disabled = true;
     return winner();
   }
 });
@@ -45,6 +47,9 @@ paper.addEventListener("click", () => {
   if (compScore == 5) {
     return winner();
   } else if (playerScore == 5) {
+    rock.disabled = true;
+    paper.disabled = true;
+    scissors.disabled = true;
     return winner();
   }
 });
@@ -62,8 +67,20 @@ scissors.addEventListener("click", () => {
   if (compScore == 5) {
     return winner();
   } else if (playerScore == 5) {
+    rock.disabled = true;
+    paper.disabled = true;
+    scissors.disabled = true;
     return winner();
   }
+});
+
+reset.addEventListener("click", () => {
+  message.textContent = "";
+  playerScore1.textContent = 0;
+  compScore1.textContent = 0;
+  rock.disabled = false;
+  paper.disabled = false;
+  scissors.disabled = false;
 });
 
 function getComputerChoice() {
